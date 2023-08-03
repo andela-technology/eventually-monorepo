@@ -1,4 +1,4 @@
-import { breaker, log } from "@rotorsoft/eventually";
+import { breaker, log } from "@andela-technology/eventually";
 import {
   EventContract,
   OpenAPIObject,

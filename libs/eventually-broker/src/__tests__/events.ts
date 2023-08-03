@@ -1,4 +1,4 @@
-import type { Message, CommittedEvent } from "@rotorsoft/eventually";
+import type { Message, CommittedEvent } from "@andela-technology/eventually";
 
 type Events = {
   DigitPressed: { digit: string };

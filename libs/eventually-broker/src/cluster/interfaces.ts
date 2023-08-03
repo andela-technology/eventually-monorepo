@@ -1,4 +1,4 @@
-import { Disposable } from "@rotorsoft/eventually";
+import { Disposable } from "@andela-technology/eventually";
 import { Request, Response } from "express";
 import { Operation, Service, Subscription } from "../types";
 import {

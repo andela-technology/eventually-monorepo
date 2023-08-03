@@ -1,4 +1,4 @@
-import { AggregateFactory, bind, emit, ZodEmpty } from "@rotorsoft/eventually";
+import { AggregateFactory, bind, emit, ZodEmpty } from "@andela-technology/eventually";
 import { z } from "zod";
 import * as schemas from "./calculator.schemas";
 

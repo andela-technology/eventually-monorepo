@@ -1,4 +1,4 @@
-import { dispose, sleep } from "@rotorsoft/eventually";
+import { dispose, sleep } from "@andela-tecnology/eventually";
 import axios from "axios";
 import cluster from "cluster";
 import {

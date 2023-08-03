@@ -6,14 +6,14 @@ import type {
   Messages,
   Store,
   StoreStat
-} from "@rotorsoft/eventually";
+} from "@andela-technology/eventually";
 import {
   ActorConcurrencyError,
   ConcurrencyError,
   STATE_EVENT,
   dateReviver,
   log
-} from "@rotorsoft/eventually";
+} from "@andela-technology/eventually";
 import { Pool, types } from "pg";
 import { config } from "./config";
 import { stream } from "./seed";
@@ -211,18 +211,18 @@ export const PostgresStore = (table: string): Store => {
     },
 
     stats: async (): Promise<StoreStat[]> => {
-      const sql = `SELECT 
-          name, 
-          MIN(id) as firstId, 
-          MAX(id) as lastId, 
-          MIN(created) as firstCreated, 
-          MAX(created) as lastCreated, 
+      const sql = `SELECT
+          name,
+          MIN(id) as firstId,
+          MAX(id) as lastId,
+          MIN(created) as firstCreated,
+          MAX(created) as lastCreated,
           COUNT(*) as count
         FROM 
           "${table}"
         GROUP BY 
           name
-        ORDER BY 
+        ORDER BY
           5 DESC`;
 
       return (await pool.query<StoreStat>(sql)).rows;

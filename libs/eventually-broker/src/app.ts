@@ -1,4 +1,4 @@
-import { dispose, log } from "@rotorsoft/eventually";
+import { dispose, log } from "@andela-techology/eventually";
 import * as express from "express";
 import { engine } from "express-handlebars";
 import helmet from "helmet";

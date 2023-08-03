@@ -1,6 +1,6 @@
 process.env.LOG_LEVEL = "trace";
 
-import { app, client, dispose, log } from "@rotorsoft/eventually";
+import { app, client, dispose, log } from "@andela-technology/eventually";
 import { Calculator } from "../calculator.aggregate";
 import { Chance } from "chance";
 

@@ -4,10 +4,10 @@ import {
   store,
   subscriptions,
   ValidationError
-} from "@rotorsoft/eventually";
-import { ExpressApp } from "@rotorsoft/eventually-express";
-import { HttpClient } from "@rotorsoft/eventually-openapi";
-import { Calculator } from "@rotorsoft/calculator-artifacts";
+} from "@andela-technology/eventually";
+import { ExpressApp } from "@andela-technology/eventually-express";
+import { HttpClient } from "@andela-technology/eventually-openapi";
+import { Calculator } from "@andela-technology/calculator-artifacts";
 
 const port = 4002;
 const http = HttpClient(port);

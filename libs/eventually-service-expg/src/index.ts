@@ -4,9 +4,9 @@ import {
   bootstrap,
   log,
   store
-} from "@rotorsoft/eventually";
-import { ExpressApp } from "@rotorsoft/eventually-express";
-import { PostgresStore } from "@rotorsoft/eventually-pg";
+} from "@andela-technology/eventually";
+import { ExpressApp } from "@andela-technology/eventually-express";
+import { PostgresStore } from "@andela-technology/eventually-pg";
 import { config } from "./config";
 
 /**

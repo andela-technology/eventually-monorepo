@@ -8,7 +8,7 @@ import {
   type EventHandlerFactory,
   type ProjectorFactory,
   CommandHandlerFactory
-} from "@rotorsoft/eventually";
+} from "@andela-technology/eventually";
 import {
   config,
   esml,
@@ -17,7 +17,7 @@ import {
   httpPostPath,
   openAPI,
   toJsonSchema
-} from "@rotorsoft/eventually-openapi";
+} from "@andela-technology/eventually-openapi";
 import * as cors from "cors";
 import * as express from "express";
 import { Server } from "http";

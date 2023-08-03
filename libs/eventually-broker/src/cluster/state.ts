@@ -1,4 +1,4 @@
-import { dispose, log, port, scheduler } from "@rotorsoft/eventually";
+import { dispose, log, port, scheduler } from "@andela-technology/eventually";
 import cluster, { Worker } from "cluster";
 import { Request, Response } from "express";
 import { cpus } from "os";

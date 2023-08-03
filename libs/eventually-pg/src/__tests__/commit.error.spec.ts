@@ -1,4 +1,4 @@
-import { CommittedEvent, bind, dispose, Message } from "@rotorsoft/eventually";
+import { CommittedEvent, bind, dispose, Message } from "@andela-technology/eventually";
 import { Pool, QueryResult } from "pg";
 import { PostgresStore } from "../PostgresStore";
 

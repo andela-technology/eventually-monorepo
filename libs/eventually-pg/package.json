@@ -1,15 +1,15 @@
 {
-  "name": "@rotorsoft/eventually-pg",
+  "name": "@andela-technology/eventually-pg",
   "version": "5.5.20",
   "description": "Eventually Postgres Store Adapters",
   "author": {
-    "name": "rotorsoft",
-    "email": "rotorsoft@outlook.com"
+    "name": "andela-technology",
+    "email": "andela-technology@outlook.com"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rotorsoft/eventually-monorepo.git",
+    "url": "git+https://github.com/andela-technology/eventually-monorepo.git",
     "directory": "libs/eventually-pg"
   },
   "main": "dist/index",
@@ -21,7 +21,7 @@
     "build": "npx tsc --build"
   },
   "dependencies": {
-    "@rotorsoft/eventually": "workspace:^5",
+    "@andela-technology/eventually": "workspace:^5",
     "pg": "^8.11.3",
     "zod": "^3.22.4"
   }

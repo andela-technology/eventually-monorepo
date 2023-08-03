@@ -1,15 +1,15 @@
 {
-  "name": "@rotorsoft/calculator",
+  "name": "@andela-technology/calculator",
   "version": "0.1.0",
   "description": "Calculator Service",
   "author": {
-    "name": "rotorsoft",
-    "email": "rotorsoft@outlook.com"
+    "name": "andela-technology",
+    "email": "andela-technology@outlook.com"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rotorsoft/eventually-monorepo.git",
+    "url": "git+https://github.com/andela-technology/eventually-monorepo.git",
     "directory": "services/calculator"
   },
   "main": "index.js",
@@ -17,11 +17,11 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@rotorsoft/calculator-artifacts": "workspace:^1",
-    "@rotorsoft/eventually": "workspace:^5",
-    "@rotorsoft/eventually-express": "workspace:^5",
-    "@rotorsoft/eventually-openapi": "workspace:^0",
-    "@rotorsoft/eventually-pg": "workspace:^5",
+    "@andela-technology/calculator-artifacts": "workspace:^1",
+    "@andela-technology/eventually": "workspace:^5",
+    "@andela-technology/eventually-express": "workspace:^5",
+    "@andela-technology/eventually-openapi": "workspace:^0",
+    "@andela-technology/eventually-pg": "workspace:^5",
     "zod": "^3.22.4"
   }
 }

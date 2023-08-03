@@ -4,7 +4,7 @@ import {
   Message,
   PolicyFactory,
   ZodEmpty
-} from "@rotorsoft/eventually";
+} from "@andela-technology/eventually";
 import { z } from "zod";
 import { Calculator } from "./calculator.aggregate";
 import * as schemas from "./calculator.schemas";

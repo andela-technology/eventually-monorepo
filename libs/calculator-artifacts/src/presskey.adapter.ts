@@ -1,4 +1,4 @@
-import { CommandAdapterFactory, ZodEmpty } from "@rotorsoft/eventually";
+import { CommandAdapterFactory, ZodEmpty } from "@andela-techonology/eventually";
 import { z } from "zod";
 import * as schemas from "./calculator.schemas";
 

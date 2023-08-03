@@ -1623,7 +1623,7 @@ __metadata:
 
 "@rotorsoft/broker@workspace:services/broker":
   version: 0.0.0-use.local
-  resolution: "@rotorsoft/broker@workspace:services/broker"
+  resolution: "@andela-technology/broker@workspace:services/broker"
   dependencies:
     "@okta/oidc-middleware": ^5.2.0
     "@rotorsoft/eventually-broker": "workspace:^2"
@@ -1634,16 +1634,16 @@ __metadata:
 
 "@rotorsoft/calculator-artifacts@workspace:^1, @rotorsoft/calculator-artifacts@workspace:libs/calculator-artifacts":
   version: 0.0.0-use.local
-  resolution: "@rotorsoft/calculator-artifacts@workspace:libs/calculator-artifacts"
+  resolution: "@andela-technology/calculator-artifacts@workspace:libs/calculator-artifacts"
   dependencies:
     "@rotorsoft/eventually": "workspace:^5"
     zod: ^3.22.4
   languageName: unknown
   linkType: soft
 
-"@rotorsoft/calculator@workspace:services/calculator":
+"@andela-technology/calculator@workspace:services/calculator":
   version: 0.0.0-use.local
-  resolution: "@rotorsoft/calculator@workspace:services/calculator"
+  resolution: "@andela-technology/calculator@workspace:services/calculator"
   dependencies:
     "@rotorsoft/calculator-artifacts": "workspace:^1"
     "@rotorsoft/eventually": "workspace:^5"
@@ -1697,7 +1697,7 @@ __metadata:
 
 "@rotorsoft/eventually-express@workspace:^5, @rotorsoft/eventually-express@workspace:libs/eventually-express":
   version: 0.0.0-use.local
-  resolution: "@rotorsoft/eventually-express@workspace:libs/eventually-express"
+  resolution: "@andela-technology/eventually-express@workspace:libs/eventually-express"
   dependencies:
     "@rotorsoft/eventually": "workspace:^5"
     "@rotorsoft/eventually-openapi": "workspace:^0"
@@ -1719,7 +1719,7 @@ __metadata:
 
 "@rotorsoft/eventually-monorepo@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@rotorsoft/eventually-monorepo@workspace:."
+  resolution: "@andela-technology/eventually-monorepo@workspace:."
   dependencies:
     "@rotorsoft/eventually": "workspace:^5"
     "@rotorsoft/eventually-express": "workspace:^5"
@@ -1783,7 +1783,7 @@ __metadata:
 
 "@rotorsoft/eventually-service-expg@workspace:libs/eventually-service-expg":
   version: 0.0.0-use.local
-  resolution: "@rotorsoft/eventually-service-expg@workspace:libs/eventually-service-expg"
+  resolution: "@andela-technology/eventually-service-expg@workspace:libs/eventually-service-expg"
   dependencies:
     "@rotorsoft/eventually": "workspace:^5"
     "@rotorsoft/eventually-express": "workspace:^5"

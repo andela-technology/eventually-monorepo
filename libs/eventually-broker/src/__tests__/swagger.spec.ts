@@ -1,5 +1,5 @@
-import { dispose, store } from "@rotorsoft/eventually";
-import { getConflicts } from "@rotorsoft/eventually-openapi";
+import { dispose, store } from "@andela-technology/eventually";
+import { getConflicts } from "@andela-technology/eventually-openapi";
 import axios from "axios";
 import { getEventContract, refreshServiceSpec } from "../specs";
 import { swagger } from "./swagger.doc";

@@ -1,5 +1,5 @@
 /** @module eventually-broker */
-import { port } from "@rotorsoft/eventually";
+import { port } from "@andela-technology/eventually";
 import { VoidPullChannel } from "./channels";
 import { PullChannel, SubscriptionStore } from "./interfaces";
 import { InMemorySubscriptionStore } from "./adapters";

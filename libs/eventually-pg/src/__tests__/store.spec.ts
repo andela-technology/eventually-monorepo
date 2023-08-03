@@ -4,7 +4,7 @@ import {
   dispose,
   store,
   subscriptions
-} from "@rotorsoft/eventually";
+} from "@andela-technology/eventually";
 import { Chance } from "chance";
 import { PostgresStore, PostgresSubscriptionStore } from "..";
 import { event, sleep } from "./utils";

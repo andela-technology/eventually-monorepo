@@ -1,4 +1,4 @@
-import { Actor, AllQuery, CommittedEvent, log } from "@rotorsoft/eventually";
+import { Actor, AllQuery, CommittedEvent, log } from "@andela-technology/eventually";
 import { Request, Router } from "express";
 import { Service, subscriptions } from "..";
 import { state } from "../cluster";

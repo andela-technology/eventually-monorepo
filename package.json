@@ -1,10 +1,10 @@
 {
-  "name": "@rotorsoft/eventually-monorepo",
+  "name": "@andela-technology/eventually-monorepo",
   "description": "Yarn2 monorepo covering *eventually* libs and sample services",
   "version": "1.0.0",
   "author": {
-    "name": "rotorsoft",
-    "email": "rotorsoft@outlook.com"
+    "name": "andela-technology",
+    "email": "andela-technology@outlook.com"
   },
   "license": "MIT",
   "engines": {
@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rotorsoft/eventually-monorepo.git"
+    "url": "git+https://github.com/andela-technology/eventually-monorepo.git"
   },
   "bugs": {
-    "url": "https://github.com/rotorsoft/eventually-monorepo/issues"
+    "url": "https://github.com/andela-technology/eventually-monorepo/issues"
   },
-  "homepage": "https://github.com/rotorsoft/eventually-monorepo#readme",
+  "homepage": "https://github.com/andela-technology/eventually-monorepo#readme",
   "workspaces": [
     "libs/*",
     "services/*"
@@ -69,10 +69,10 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@rotorsoft/eventually": "workspace:^5",
-    "@rotorsoft/eventually-express": "workspace:^5",
-    "@rotorsoft/eventually-openapi": "workspace:^0",
-    "@rotorsoft/eventually-pg": "workspace:^5",
+    "@andela-technology/eventually": "workspace:^5",
+    "@andela-technology/eventually-express": "workspace:^5",
+    "@andela-technology/eventually-openapi": "workspace:^0",
+    "@andela-technology/eventually-pg": "workspace:^5",
     "http-cache-semantics": "^4.1.1",
     "luxon": "^3.4.4"
   },
@@ -80,7 +80,7 @@
   "eventually": {
     "store": "calculator",
     "artifacts": {
-      "@rotorsoft/calculator-artifacts": [
+      "@andela-technology/calculator-artifacts": [
         {
           "name": "CalculatorTotals",
           "scope": "public"

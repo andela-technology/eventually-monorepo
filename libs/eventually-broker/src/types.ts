@@ -1,5 +1,5 @@
-import { CommittedEvent } from "@rotorsoft/eventually";
-import { ServiceSpec } from "@rotorsoft/eventually-openapi";
+import { CommittedEvent } from "@andela-technology/eventually";
+import { ServiceSpec } from "@andela-technology/eventually-openapi";
 import { RequestHandler } from "express";
 import { ChannelResolvers, SubscriptionStore } from "./interfaces";
 

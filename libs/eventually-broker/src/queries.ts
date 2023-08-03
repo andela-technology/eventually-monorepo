@@ -1,4 +1,4 @@
-import { AllQuery, CommittedEvent, log } from "@rotorsoft/eventually";
+import { AllQuery, CommittedEvent, log } from "@andela-technology/eventually";
 import * as axios from "axios";
 import { state } from "./cluster";
 import { getEventContract } from "./specs";

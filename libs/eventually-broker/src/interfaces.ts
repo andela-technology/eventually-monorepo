@@ -1,4 +1,4 @@
-import { CommittedEvent, Disposable } from "@rotorsoft/eventually";
+import { CommittedEvent, Disposable } from "@andela-technology/eventually";
 import {
   PullOptions,
   PushEvent,

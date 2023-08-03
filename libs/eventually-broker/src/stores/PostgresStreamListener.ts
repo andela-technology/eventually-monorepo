@@ -1,5 +1,5 @@
-import { dispose, log } from "@rotorsoft/eventually";
-import { config } from "@rotorsoft/eventually-pg";
+import { dispose, log } from "@andela-technology/eventually";
+import { config } from "@andela-technology/eventually-pg";
 import createSubscriber, { Subscriber } from "pg-listen";
 import { TriggerPayload } from "..";
 import { StreamListener } from "../interfaces";

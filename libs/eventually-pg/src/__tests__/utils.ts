@@ -1,4 +1,4 @@
-import { bind, Message, STATE_EVENT } from "@rotorsoft/eventually";
+import { bind, Message, STATE_EVENT } from "@andela-technology/eventually";
 
 export type E = {
   test1: { value: string };

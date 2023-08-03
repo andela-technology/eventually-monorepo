@@ -20,7 +20,7 @@ import {
   type Schema,
   type Snapshot,
   type State
-} from "@rotorsoft/eventually";
+} from "@andela-technology/eventually";
 import type { NextFunction, Request, Response } from "express";
 
 const eTag = (res: Response, snapshot?: Snapshot): void => {

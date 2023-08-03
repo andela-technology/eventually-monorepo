@@ -1,7 +1,7 @@
 import { CronJob } from "cron";
 import { PullChannel } from "../interfaces";
 import { TriggerCallback } from "../types";
-import { camelize, CommittedEvent } from "@rotorsoft/eventually";
+import { camelize, CommittedEvent } from "@andela-technology/eventually";
 
 // trims epoch time (bigint) by a few years to make it fit in a pg bigint
 const OFFSET = 1_670_000_000_000;
