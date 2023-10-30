@@ -17,7 +17,7 @@ import {
   SnapshotsQuery,
   SnapshotStore,
   store
-} from "@rotorsoft/eventually";
+} from "@andela-technology/eventually";
 import { NextFunction, Request, Response } from "express";
 
 export const statsHandler = async (
@@ -195,6 +195,8 @@ export const errorHandler = (
       return res.status(404).send({ message, ...other });
     case Errors.ConcurrencyError:
       return res.status(409).send({ message, ...other });
+    case Errors.RetryableError:
+      return res.status(503).send({ message, ...other });
     default:
       return res.status(500).send({ message });
   }
