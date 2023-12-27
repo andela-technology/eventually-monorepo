@@ -132,6 +132,20 @@
   <label class="px-4" for="retryTimeout">Retry Timeout (sec)</label>
 </div>
 
+<div class="col-4 form-floating mb-3">
+  <input
+    type="number"
+    class="form-control"
+    id="timeoutSecs"
+    placeholder="requestTimeout"
+    name="timeout_secs"
+    value="{{timeout_secs}}"
+    required
+    {{#if isAdmin}}{{else}}disabled{{/if}}
+  />
+  <label class="px-4" for="timeoutSecs">Request Timeout (sec)</label>
+</div>
+
 {{#if isAdmin}}
   <div class="mb-3">
     <button class="btn btn-primary" type="submit">Submit</button>

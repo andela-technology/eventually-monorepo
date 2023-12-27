@@ -53,6 +53,7 @@ export type SubscriptionState = {
   batchSize: number;
   retries: number;
   retryTimeoutSecs: number;
+  timeoutSecs: number;
   pushChannel: PushChannel;
   streamsRegExp: RegExp;
   namesRegExp: RegExp;

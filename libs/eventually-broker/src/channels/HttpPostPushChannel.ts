@@ -1,6 +1,6 @@
 import { log, Payload } from "@andela-technology/eventually";
 import axios, { AxiosRequestHeaders } from "axios";
-import { CommittableHttpStatus } from "../cluster";
+import { SubscriptionState } from "../cluster";
 import { PushChannel } from "../interfaces";
 import { PushEvent, PushResponse } from "../types";
 import { toAxiosRequestHeaders } from "../utils";
@@ -10,11 +10,12 @@ const TIMEOUT = 10000;
 const push = async (
   url: string,
   event: PushEvent,
+  state: SubscriptionState,
   headers?: AxiosRequestHeaders
 ): Promise<PushResponse> => {
   try {
     const { status, statusText } = await axios.post(url, event, {
-      timeout: TIMEOUT,
+      timeout: state.timeoutSecs * 1000 || TIMEOUT,
       headers
     });
     return { statusCode: status, statusText };
@@ -54,7 +55,7 @@ export const HttpPostPushChannel = (
   return {
     label: "",
     init: () => Promise.resolve(),
-    push: async (events) => {
+    push: async (events, state) => {
       let lastCode = 200;
       while (events.length) {
         const event = events.shift();
@@ -62,10 +63,10 @@ export const HttpPostPushChannel = (
           event.response = await push(
             endpoint.href,
             event,
+            state,
             axiosRequestHeaders
           );
           lastCode = event.response.statusCode;
-          if (!CommittableHttpStatus.includes(lastCode)) break;
         }
       }
       return lastCode;

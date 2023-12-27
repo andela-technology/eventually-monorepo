@@ -56,6 +56,7 @@ export type Service = {
  * - `batch_size` The pull batch size (default 100)
  * - `retries` The number of retries before pausing (default 3)
  * - `retry_timeout_sec` Seconds between retries with exponential backoff (default 10)
+ * - `timeout_sec` The number of seconds to wait for a response (default 10)
  * - `endpoint` Calculated field combining consumer url with path
  */
 export type Subscription = {
@@ -71,6 +72,7 @@ export type Subscription = {
   batch_size: number;
   retries: number;
   retry_timeout_secs: number;
+  timeout_sec?: number;
   endpoint: string;
 };
 
