@@ -1,3 +1,88 @@
+#### 2024-03-22 [+/-](https://github.com/andela-technology/eventually-monorepo/compare/@rotorsoft/eventually-v5.0.0...@rotorsoft/eventually-v5.1.0) @rotorsoft/eventually-v5.1.0
+  - MINOR [8eee7ffa](https://github.com/andela-technology/eventually-monorepo/commit/8eee7ffa85cf17e13521a1a318d374ccc2f39515) feat: remove factory arg in client.command, bind only messages
+  - MINOR [dc922b2c](https://github.com/andela-technology/eventually-monorepo/commit/dc922b2c62adfe18c3e6307b832a5b12e527d5ec) feat: simplified projector interface, this is still an experimental feature
+  - MINOR [e38854f0](https://github.com/andela-technology/eventually-monorepo/commit/e38854f0c9091cf9bd1c06415d86b17989745183) feat: refactored handlers, including new exposed poll function to coordinate event handlers
+  - MINOR [4443bb88](https://github.com/andela-technology/eventually-monorepo/commit/4443bb88ae8eee7008f6a4d1b6251445a77b978b) feat: refactor ts enums with constants, move remaining rest utilities to new openapi lib
+  - MINOR [264dc58f](https://github.com/andela-technology/eventually-monorepo/commit/264dc58faae6fa5250b573bc0faecf7bdcaa4ec7) feat: refactor process managers as actors, sharing the streams of the aggregates inside the transaction box, add actor field to event streams
+  - MINOR [f351c314](https://github.com/andela-technology/eventually-monorepo/commit/f351c3142f1ec029144120e019217403212bc4e0) feat: refactor stream as readonly property of streamables, command ids are equivalent to streams
+  - MINOR [cba0950e](https://github.com/andela-technology/eventually-monorepo/commit/cba0950e17c536f880b0e3d943c9e874983f0408) feat: refactor stream as readonly property of streamables, command ids are equivalent to streams
+  - MINOR [ff0ee7fe](https://github.com/andela-technology/eventually-monorepo/commit/ff0ee7fea96383f588cbc164c836bba254d040ca) feat: refactor in-memory broker, reacting to app commit events asynchronously, use broker().drain() to sync tests
+  - PATCH [66b03679](https://github.com/andela-technology/eventually-monorepo/commit/66b03679ce9338dd29a3a3c3621da3367064aef2) fix: add trpc to typedoc and ci-cd
+  - PATCH [7d3d3198](https://github.com/andela-technology/eventually-monorepo/commit/7d3d3198dbd3fe214edfa805e2145dfd909d1b00) fix: up deps
+  - PATCH [a6791f3a](https://github.com/andela-technology/eventually-monorepo/commit/a6791f3a19b1d98f274baec256f37b2837fa0cf4) fix: partial dynamo store
+  - PATCH [53200a38](https://github.com/andela-technology/eventually-monorepo/commit/53200a3811178b5a3fa917fe4b50f82a35dfa7a6) fix: stores drop method, failed attempt to build a dynamo projector
+  - PATCH [0e542908](https://github.com/andela-technology/eventually-monorepo/commit/0e54290885a18dd3a1559ae1ba34f182ca845372) fix: finish dynamo stores demo
+  - PATCH [186a5652](https://github.com/andela-technology/eventually-monorepo/commit/186a56525ad2c0e7bf6c3881a06be171f205cc8b) fix: separate subscriptions from event store
+  - PATCH [9d0c377f](https://github.com/andela-technology/eventually-monorepo/commit/9d0c377fffacb7bc0473d8cb735030e5e419b845) fix: add drain options
+  - PATCH [8e669a48](https://github.com/andela-technology/eventually-monorepo/commit/8e669a48aeb563b00fd673402268dd7367e47435) fix: drain broker in serverless command
+  - PATCH [94bdd453](https://github.com/andela-technology/eventually-monorepo/commit/94bdd4534fcd60fdd119df5ffc50c2f013d32cf9) fix: add response mapper to proxy
+  - PATCH [9ddc1af5](https://github.com/andela-technology/eventually-monorepo/commit/9ddc1af56fd5aa2edd024ee45c9ef7ebbb495525) fix: expose proxy type
+  - PATCH [2404b897](https://github.com/andela-technology/eventually-monorepo/commit/2404b897611808782e129b152fc18ddfaac4b316) fix: move http utils to eventually, add proxy util
+  - PATCH [2e4bae48](https://github.com/andela-technology/eventually-monorepo/commit/2e4bae48e04a8704045bafb4d192d3eb0c49cc49) fix: restructure utils, remove cdk from aws and add command/query adapters
+  - PATCH [a4f744ee](https://github.com/andela-technology/eventually-monorepo/commit/a4f744ee16e06948a073ac4c086fc23bbd0f8ae7) fix: add adapter libs for 3 major cloud providers
+  - PATCH [625c25c6](https://github.com/andela-technology/eventually-monorepo/commit/625c25c65f7c47b31fa5991b5ca3d7b70fd80262) fix: add prj projection patch shortcut util
+  - PATCH [61ea1354](https://github.com/andela-technology/eventually-monorepo/commit/61ea1354631f02748e1f7b69d87c2640a2acc0ab) fix: add msg utils emit and cmd with payload validation, expose esml model generator
+  - PATCH [6058731f](https://github.com/andela-technology/eventually-monorepo/commit/6058731fc896ed8c3a8d29b399d575bc1ce9384c) fix: add options to express app build
+  - PATCH [f62ce52e](https://github.com/andela-technology/eventually-monorepo/commit/f62ce52ec6f3db762a5c0600f80f7f1388c08f52) fix: make command return last snapshot only, expose more utils from express, make listen optional when using serverless
+  - PATCH [ccf045db](https://github.com/andela-technology/eventually-monorepo/commit/ccf045dbce2082b35a8b7c7cda225bf830fb2ced) fix: improve projection patches and queries with more options and aggregates
+  - PATCH [b38358ca](https://github.com/andela-technology/eventually-monorepo/commit/b38358cab158dbc95bd3b1fc64d5ddecf9ffc343) fix: fix tests, gen docs, up packages
+  - PATCH [5a9747e4](https://github.com/andela-technology/eventually-monorepo/commit/5a9747e4618e3bb1936f044e9f287b7bb12ce253) fix: add eq shortcut to query operators
+  - PATCH [7fec0feb](https://github.com/andela-technology/eventually-monorepo/commit/7fec0febfa9c414d2d9180864893549aae412d1e) fix: new seed utility, refactor projection api
+  - PATCH [75755f69](https://github.com/andela-technology/eventually-monorepo/commit/75755f69bff2a7f523be1cb0991231205b41f0a9) fix: revert client command factory
+  - PATCH [a38a4e5a](https://github.com/andela-technology/eventually-monorepo/commit/a38a4e5aea12500e61fcfb046fa22fd7229fc26d) fix: fix bind typings, gen docs
+  - PATCH [e6adbd1b](https://github.com/andela-technology/eventually-monorepo/commit/e6adbd1be9dd0fcde66d46adfb952895f9a27ed8) fix: create PollOptions type
+  - PATCH [8e788ac5](https://github.com/andela-technology/eventually-monorepo/commit/8e788ac59b6c6a4048e1ebae1e00b741a182a59f) fix: add some traces
+  - PATCH [8ec32805](https://github.com/andela-technology/eventually-monorepo/commit/8ec32805222c1f0ac47df1d0debbe46e2147d070) fix: expose drain handler
+  - PATCH [5d1c5e29](https://github.com/andela-technology/eventually-monorepo/commit/5d1c5e29c241879b68dec403c7c46de522953cbd) fix: refactor handlers, ensure state events are committed in the right order
+  - PATCH [dba15756](https://github.com/andela-technology/eventually-monorepo/commit/dba1575646865730ad3f2580d29549c75d005d32) fix: moved package config from core lib to openapi lib to avoid fs dependency in core
+  - PATCH [60785ca5](https://github.com/andela-technology/eventually-monorepo/commit/60785ca59793b1a1239d2ac5b85993fea880b89e) fix: deprecate snapshot stores, using STATE_EVENT events instead
+  - PATCH [a6bb0e50](https://github.com/andela-technology/eventually-monorepo/commit/a6bb0e5093a2fe18d2d7163b8c69eaf3e6d14e41) fix: up pks and fix zod errors
+  - PATCH [376eea33](https://github.com/andela-technology/eventually-monorepo/commit/376eea33bcc3576b0e51cafd9406d06a6ef759d6) fix: remove config calls from logger
+  - PATCH [7acdb127](https://github.com/andela-technology/eventually-monorepo/commit/7acdb127555678e869bf0d9cad4343a890139ac5) fix: bug in clone utility
+  - PATCH [69740321](https://github.com/andela-technology/eventually-monorepo/commit/69740321a48da5e23e3902fcd22915b216ad4781) fix: refactor openapi utilities into new library
+  - PATCH [e2215c07](https://github.com/andela-technology/eventually-monorepo/commit/e2215c07f052055656b26a4bea58517003a67a59) fix: fix date reviver, gen docs
+  - PATCH [1d0b606a](https://github.com/andela-technology/eventually-monorepo/commit/1d0b606ad3cfb71dab91fd113547a51d405542a5) fix: add optional custom state reducers as a property of reducer artifacts
+  - PATCH [7d30e4ac](https://github.com/andela-technology/eventually-monorepo/commit/7d30e4ac145626081168945cbd77099276de0d68) fix: refactor reducibles to return partial state patch to be  merged in new clone utility for simpler immutability
+  - PATCH [6e643bdf](https://github.com/andela-technology/eventually-monorepo/commit/6e643bdf64745dc86c7ff97c759e6cb37a1bf137) fix: implement optimistic concurrency check for process managers as actors
+  - PATCH [afcddbb1](https://github.com/andela-technology/eventually-monorepo/commit/afcddbb1935956c71fd5b0231185b6177c65b2ac) fix: add inference helpers
+  - PATCH [7fcd9741](https://github.com/andela-technology/eventually-monorepo/commit/7fcd9741f1123eff1e2fc5ca1fffd0b47ca9cccd) fix: process managers with fixed schema
+  - PATCH [485dd617](https://github.com/andela-technology/eventually-monorepo/commit/485dd61738487d63ca58c8fceb605ea4ba58c120) fix: refactor InvariantError
+  - PATCH [fed7dfbc](https://github.com/andela-technology/eventually-monorepo/commit/fed7dfbc42eb897ce73cb2767e0a1719102d1f1a) fix: add id to actor
+  - PATCH [574cebd9](https://github.com/andela-technology/eventually-monorepo/commit/574cebd9ebc91410e60a0671b5d108350eb42727) fix: add invariant options to aggregates under given group
+  - PATCH [819897fa](https://github.com/andela-technology/eventually-monorepo/commit/819897faa733a66fa8b4904c511a6e2b911ac817) fix: in-memory broker connects only private consumers
+  - PATCH [264b6e57](https://github.com/andela-technology/eventually-monorepo/commit/264b6e57bc083ff6f93996c565c5733b0214d167) fix: rename singletons as ports
+  - PATCH [2a61503b](https://github.com/andela-technology/eventually-monorepo/commit/2a61503b6571b36a99a34f9ae453a6d910b6d1e1) fix: open internal subscriptions state as endpoint
+  - PATCH [4cb0ab30](https://github.com/andela-technology/eventually-monorepo/commit/4cb0ab3008f1ad97b2cdfac1861b7c89c175abdc) fix: refactor projection results, app emits projection events, hotel example reacting and sending sse to client
+  - PATCH [d89c74f3](https://github.com/andela-technology/eventually-monorepo/commit/d89c74f389d9e68913284fca9cfedc2d251e03d1) fix: validate types in builder with options
+  - PATCH [0ba16e34](https://github.com/andela-technology/eventually-monorepo/commit/0ba16e348e055082f10632ee9c250347b4b1615f) fix: move store registration to with options
+  - PATCH [067765fc](https://github.com/andela-technology/eventually-monorepo/commit/067765fc6c2af66de06c7e56aee2f840e3fcf45f) fix: up dependencies
+  - PATCH [dab2c86e](https://github.com/andela-technology/eventually-monorepo/commit/dab2c86e426b9342e9731ca241545517d6b086d5) fix: add commit predicate to builder interface as options, so we can control state commits from the outside
+  - PATCH [3a535c30](https://github.com/andela-technology/eventually-monorepo/commit/3a535c30a14144b2816419b28e2529f0b3ad3b1e) fix: prepare app with commit-state option to allow 'closing the books' scenarios in the future, move snapshots to the in-memory broker
+  - PATCH [ec34505e](https://github.com/andela-technology/eventually-monorepo/commit/ec34505eed324d029261b18bd695fbb2ac0ae050) fix: test default scopes
+  - PATCH [d107e8d6](https://github.com/andela-technology/eventually-monorepo/commit/d107e8d63dc42b3fd7d7b3d56eb6c90af3faff35) fix: test queries in express
+  - PATCH [ca11867c](https://github.com/andela-technology/eventually-monorepo/commit/ca11867c8a9f95c595aa6755ec46889b84967889) fix: add projection query to read
+  - PATCH [b3dd28e4](https://github.com/andela-technology/eventually-monorepo/commit/b3dd28e44639f3d3de134d12129fc7cd35c61c72) fix: add query to projection store
+  - PATCH [6a6d2fdb](https://github.com/andela-technology/eventually-monorepo/commit/6a6d2fdbc64046b8bb68eac07b6ea0525e4493ad) fix: add scopes, expose only public endpoints, pass options to in-memory projector store, up cron
+  - PATCH [81b08b85](https://github.com/andela-technology/eventually-monorepo/commit/81b08b85e7ed24ebfe3bb000b6974abafc195486) fix: add next 30 sales projection to hotel, refactor projector without load, make handlers async
+  - PATCH [68b75c70](https://github.com/andela-technology/eventually-monorepo/commit/68b75c7052dc12bbbb98c8739eb706590b8a2561) fix: cover async broker, fix scheduler and in-memory store for tests
+  - PATCH [2e7d50d1](https://github.com/andela-technology/eventually-monorepo/commit/2e7d50d1059116aa8a5fbdd21646d6fcaef89820) fix: refactor internal broker using polling/lease pattern, make process managers idempotent with automatic prefix
+  - PATCH [186736c5](https://github.com/andela-technology/eventually-monorepo/commit/186736c508b1e968d976dd331779b6b6cb82b3e5) fix: add scheduler test
+  - PATCH [7eeb4326](https://github.com/andela-technology/eventually-monorepo/commit/7eeb43267b2edc0548de32e5058184fcfe48627e) fix: implement in-memory broker adapters
+  - PATCH [1c38b331](https://github.com/andela-technology/eventually-monorepo/commit/1c38b3311d2bb950d762806d26d93f4bd168389e) fix: implement pg projector store, add date reviver to pg json parsing
+  - PATCH [7196b817](https://github.com/andela-technology/eventually-monorepo/commit/7196b817aef772879e37ce09dc25769e422a102e) fix: add projector stores to builder interface
+  - PATCH [54581db7](https://github.com/andela-technology/eventually-monorepo/commit/54581db7ce1e1f66c535632dba3996f947d8eb99) fix: refactor projector abstraction
+  - PATCH [c1860fd8](https://github.com/andela-technology/eventually-monorepo/commit/c1860fd85432b0236bab770129dd2e625c969e9f) fix: add hotel projector
+  - PATCH [390f2b00](https://github.com/andela-technology/eventually-monorepo/commit/390f2b005698dce9f78665d0f15d986d6f49c221) fix: refine projector abstraction
+  - PATCH [aca66b09](https://github.com/andela-technology/eventually-monorepo/commit/aca66b093fe759dca3f83974f4046a30e162f80b) fix: support key/value projections using filters and values
+  - PATCH [32c292fe](https://github.com/andela-technology/eventually-monorepo/commit/32c292fe91b9ecade8cba436f67bb084952222c5) fix: add message validation to project
+  - PATCH [2e7d8a64](https://github.com/andela-technology/eventually-monorepo/commit/2e7d8a648953d58757abd25919f56e71b6e14ffe) fix: in-memory-projector-store to catch out of order watermarks
+  - PATCH [42e9dd4e](https://github.com/andela-technology/eventually-monorepo/commit/42e9dd4e707beecae342d8b73300e6bf11eea5a0) fix: update documentation
+  - PATCH [25a6efe7](https://github.com/andela-technology/eventually-monorepo/commit/25a6efe7f2b3ef8045d5bac2e98bffdc30f0baed) fix: add projector artifact
+  - PATCH [0e14b95b](https://github.com/andela-technology/eventually-monorepo/commit/0e14b95bea4331c5455cd7ab3629b8087d2943fd) fix: refactor types for projectors
+  - PATCH [f98b8603](https://github.com/andela-technology/eventually-monorepo/commit/f98b8603871aeb8291060c0c3479ca1c3ae2abc2) fix: use last loaded event version as expected version to commit when not provided by command
+  - PATCH [713a1cad](https://github.com/andela-technology/eventually-monorepo/commit/713a1cad4613a65268b6e4b501355721809a71d3) fix: refactor configs, add OAS_UI env variable to configure openapi viewer
+  - PATCH [56da09d5](https://github.com/andela-technology/eventually-monorepo/commit/56da09d5f54c6497a9c4a1de0e5b7252ab933718) fix: make logger more fluent
+  - PATCH [cdd1ae72](https://github.com/andela-technology/eventually-monorepo/commit/cdd1ae72942d7c628eccd0375832ca90c32d6b49) fix: removed chalk dependency, refactor default logger
 #### 2023-12-11 [+/-](https://github.com/Rotorsoft/eventually-monorepo/compare/0...@rotorsoft/eventually-trpc-v0.1.0) @rotorsoft/eventually-trpc-v0.1.0
   - PATCH [160968d7](https://github.com/Rotorsoft/eventually-monorepo/commit/160968d726d7bceb142dc3b7b664a2ebc0ba55fd) fix: add trpc adapter
 #### 2023-12-11 [+/-](https://github.com/Rotorsoft/eventually-monorepo/compare/@rotorsoft/eventually-broker-v2.2.14...@rotorsoft/eventually-broker-v2.2.15) @rotorsoft/eventually-broker-v2.2.15
