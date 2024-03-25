@@ -551,3 +551,5 @@ GET {{host}}/room
 ### Get API stats
 GET {{host}}/stats
 ```
+
+.

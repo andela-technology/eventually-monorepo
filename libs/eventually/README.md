@@ -116,3 +116,5 @@ The framework provides a number of input/output ports (abstract interfaces) to h
 - Independent **seed** function in stores, to be called by service bootstrap logic or CI/CD pipelines accordining to hosting options
 - Stores (and singletons in general) are initialized by factories when invoked for the first time, and those resources are disposed by new **dispose** utility - Removed init/close pattern
 - Use dispose()() in unit tests teardown
+
+.
