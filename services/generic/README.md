@@ -8,3 +8,5 @@ The configuration is declared inside `package.json` and it uses the `boot` metho
 import { boot } from "@andela-technology/eventually-service-expg";
 void boot();
 ```
+
+.
