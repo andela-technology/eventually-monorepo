@@ -17,8 +17,8 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@okta/oidc-middleware": "^5.0.0",
     "@andela-technology/eventually-broker": "workspace:^1",
+    "@okta/oidc-middleware": "^5.0.0",
     "express-session": "^1.17.3"
   },
   "devDependencies": {
