@@ -19,8 +19,10 @@ describe("express app", () => {
         .object({ test: joi.string().required() })
         .required()
         .validate({});
-      if (error)
+      if (error) {
+        res.status(400);
         throw new ValidationError(error.details.flatMap((d) => d.message));
+      }
       res.send("Query results");
     });
     await exapp.listen(false, port);
