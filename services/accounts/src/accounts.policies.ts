@@ -1,4 +1,8 @@
-import { bind, Policy, ProcessManagerFactory } from "@andela-technology/eventually";
+import {
+  bind,
+  Policy,
+  ProcessManagerFactory
+} from "@andela-technology/eventually";
 import * as commands from "./accounts.commands";
 import * as events from "./accounts.events";
 import * as models from "./accounts.models";

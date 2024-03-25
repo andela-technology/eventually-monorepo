@@ -1,4 +1,7 @@
-import { CommittedEvent, Disposable } from "@andela-technology/eventually";
+import { 
+  CommittedEvent, 
+  Disposable 
+} from "@andela-technology/eventually";
 import {
   PullOptions,
   PushEvent,
