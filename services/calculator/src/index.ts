@@ -6,7 +6,10 @@ import {
 } from "@andela-technology/calculator-artifacts";
 import { app, bootstrap, store } from "@andela-technology/eventually";
 import { ExpressApp } from "@andela-technology/eventually-express";
-import { PostgresSnapshotStore, PostgresStore } from "@andela-technology/eventually-pg";
+import {
+  PostgresSnapshotStore,
+  PostgresStore
+} from "@andela-technology/eventually-pg";
 
 void bootstrap(async (): Promise<void> => {
   const snapshotStore = PostgresSnapshotStore("calculators");
