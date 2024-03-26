@@ -1,3 +1,34 @@
+#### 2024-03-26 [+/-](https://github.com/andela-technology/eventually-monorepo/compare/0...@andela-technology/eventually-v0.1.0) @andela-technology/eventually-v0.1.0
+  - MINOR [860d4db4](https://github.com/andela-technology/eventually-monorepo/commit/860d4db47d70d74c75afccce20d78d33f5c5055e) feat: deprecated withCommandHandlers and withEventHandlers, removed swagger-ui-express, replaced joi with zod for internal validations, using TS strict
+  - MINOR [30777784](https://github.com/andela-technology/eventually-monorepo/commit/307777843d184747ebe5c7ad9dd8c7da493d3882) feat: refactor TS types for better intellisense and readonly messages
+  - MINOR [18532870](https://github.com/andela-technology/eventually-monorepo/commit/18532870f00d23beca0d69ef7d687cfaef8504d2) feat: refactor snapshot stored, builder options to expose snapshots via query endpoint
+  - MINOR [944fc028](https://github.com/andela-technology/eventually-monorepo/commit/944fc028462711677b34905092e2a2bd2858d300) feat: add subscription store factory to broker app options to avoid init in workers
+  - MINOR [c4197242](https://github.com/andela-technology/eventually-monorepo/commit/c419724221cb539c216079e25f86efad7da38414) feat: query store by correlation (#24)
+  - PATCH [265f4b47](https://github.com/andela-technology/eventually-monorepo/commit/265f4b476bcab0f9820fe1b48113175b2b8f7300) fix: Bump libs for andela-technology repo (#6)
+  - PATCH [788c05da](https://github.com/andela-technology/eventually-monorepo/commit/788c05da5510c89b02fb0497b46cefe96833b2ec) fix: Add Retryable error handler
+  - PATCH [6d3510ed](https://github.com/andela-technology/eventually-monorepo/commit/6d3510edf4c22153e71642a4b01cf4f44463c3a2) fix: expose _config endpoint with dependencies, improve swagger view
+  - PATCH [55c04878](https://github.com/andela-technology/eventually-monorepo/commit/55c04878db5f296507c506a16601b1a26bac6029) fix: create generic service implementation bound to express-pg adapters and using a declarative building strategy
+  - PATCH [5019e2a4](https://github.com/andela-technology/eventually-monorepo/commit/5019e2a4fb9387681ef67cfbd653818a7a579114) fix: add zod validation support
+  - PATCH [45f4a8f5](https://github.com/andela-technology/eventually-monorepo/commit/45f4a8f50ce59c5485f48fc146a28460840b70ae) fix: encapsulate schemas to allow other validators like zod
+  - PATCH [7f363439](https://github.com/andela-technology/eventually-monorepo/commit/7f363439278cc15e2189412e3be040383afb50e4) fix: reverted to feature with refactored types
+  - PATCH [6376b853](https://github.com/andela-technology/eventually-monorepo/commit/6376b853159e8353b34d02cec487ec381185645a) fix: change to output parameters
+  - PATCH [83c4cb4d](https://github.com/andela-technology/eventually-monorepo/commit/83c4cb4d50d72712895964729d278f3a98105ee2) fix: small refactor of command adapter
+  - PATCH [560972b2](https://github.com/andela-technology/eventually-monorepo/commit/560972b21759cfa3f1bc94424677936794680d74) fix: simplify cron channel, use camelized channel id as event name
+  - PATCH [e0efc083](https://github.com/andela-technology/eventually-monorepo/commit/e0efc0834b6b8fb57a78e97f1fa13ef25ff6c9eb) fix: refactor express app
+  - PATCH [30e053fa](https://github.com/andela-technology/eventually-monorepo/commit/30e053facfacb46587b64ad625a0f6f62734920a) fix: refactor types and interfaces
+  - PATCH [35952744](https://github.com/andela-technology/eventually-monorepo/commit/359527446a6412a8fadf5c0684b8ff3a140810bd) fix: add schemas option to handlers - to deprecate withschemas in builder
+  - PATCH [b14b8050](https://github.com/andela-technology/eventually-monorepo/commit/b14b8050726a0a8e763d2d362581af9ce87ed822) fix: refactor message loops
+  - PATCH [b7c6bb99](https://github.com/andela-technology/eventually-monorepo/commit/b7c6bb99ae03e8fe231ee26363dfa6f9eac4e08d) fix: start service schema viewer, improved graph
+  - PATCH [caae70cf](https://github.com/andela-technology/eventually-monorepo/commit/caae70cfe6dda89c6e966c965280ee779552811f) fix: add contract view to services
+  - PATCH [3952b2c2](https://github.com/andela-technology/eventually-monorepo/commit/3952b2c2a67bee941bd1b5d4ef22c89837ac602d) fix: include schemas in endpoints
+  - PATCH [fe24800b](https://github.com/andela-technology/eventually-monorepo/commit/fe24800bd0cab7805de24f6274fa6b2f50ed3976) fix: add more package.json config vars and about page to broker
+  - PATCH [98a64c99](https://github.com/andela-technology/eventually-monorepo/commit/98a64c99cc6a05890b09cc8dca547f5ec10b325d) fix: improve logging
+  - PATCH [dd05f9fa](https://github.com/andela-technology/eventually-monorepo/commit/dd05f9fa2d85f19a779693528b1d268fe4698f14) fix: refactor builder metadata
+  - PATCH [8065ca77](https://github.com/andela-technology/eventually-monorepo/commit/8065ca77b8567fdd712fdad033eff11dc2848195) fix: return registration error when event handler not found
+  - PATCH [835c0000](https://github.com/andela-technology/eventually-monorepo/commit/835c0000f04ce70ad8b920fd0fda1c55adb5925f) fix: expose app endpoints in api
+  - PATCH [e978b4a9](https://github.com/andela-technology/eventually-monorepo/commit/e978b4a922e9d1810fcc508531eeac48da42a21c) refactor: improve error handling
+  - PATCH [ce12b08f](https://github.com/andela-technology/eventually-monorepo/commit/ce12b08ff79ebfe82edfd04a792e243ffe5d104b) fix: remove command data from event metadata
+  - PATCH [832392c9](https://github.com/andela-technology/eventually-monorepo/commit/832392c9ea502e385caac1054dbf9cf8c327de26) fix: error when system returns empty event array, log strack trace
 #### 2022-11-17 [+/-](https://github.com/andela-technology/eventually-monorepo/compare/@andela-technology/eventually-v4.4.1...@andela-technology/eventually-v4.4.2) @andela-technology/eventually-v4.4.2
   - PATCH [6d3510ed](https://github.com/andela-technology/eventually-monorepo/commit/6d3510edf4c22153e71642a4b01cf4f44463c3a2) fix: expose _config endpoint with dependencies, improve swagger view
 #### 2022-11-17 [+/-](https://github.com/andela-technology/eventually-monorepo/compare/@andela-technology/eventually-broker-v1.8.0...@andela-technology/eventually-broker-v1.8.1) @andela-technology/eventually-broker-v1.8.1
