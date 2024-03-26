@@ -4,12 +4,13 @@ import { CommittedEvent, dispose } from "@andela-technology/eventually";
 import cluster from "cluster";
 import { subscriptions } from "..";
 import { broker } from "../broker";
-import { InMemorySubscriptionStore } from "../__dev__";
+import { InMemorySubscriptionStore } from "../adapters";
 import {
   FakeChildProcess,
   get,
   post,
   serviceBody,
+  stream,
   subscriptionBody,
   _delete
 } from "./utils";
@@ -84,11 +85,22 @@ describe("views", () => {
       "/graph",
       "/contracts",
       "/api/events",
-      "/correlations/aZCNKNr3HP5pQRWIxvj3XeoZ"
+      "/correlations/aZCNKNr3HP5pQRWIxvj3XeoZ",
+      "/about"
     ];
     const responses = await Promise.all(paths.map((path) => get(path, port)));
     responses.forEach((response) => {
       expect(response.status).toBe(200);
+    });
+  });
+
+  it("should monitor", async () => {
+    const paths = ["/monitor", "/monitor/123"];
+    const responses = await Promise.all(
+      paths.map((path) => stream(path, port))
+    );
+    responses.forEach((response) => {
+      expect(response).toBeDefined();
     });
   });
 

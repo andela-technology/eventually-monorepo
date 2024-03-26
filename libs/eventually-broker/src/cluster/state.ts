@@ -1,4 +1,5 @@
 import { dispose, log, singleton } from "@andela-technology/eventually";
+import { scheduler } from './scheduler';
 import cluster, { Worker } from "cluster";
 import { cpus } from "os";
 import { Writable } from "stream";
@@ -12,7 +13,6 @@ import { Operation, Service, Subscription, subscriptions } from "..";
 import { refreshServiceSpec } from "../specs";
 import { toQueryString } from "../utils";
 import { State } from "./interfaces";
-import { loop } from "./loop";
 import {
   WorkerConfig,
   SubscriptionState,
@@ -82,7 +82,7 @@ const MAX_RUNS = 10;
 const RUN_RETRY_TIMEOUT = 10000;
 
 export const state = singleton(function state(): State {
-  const operationsLoop = loop("operations");
+  const operationsLoop = scheduler("operations");
   const _services: Record<string, ServiceWithWorker> = {};
   const _timers: Record<string, NodeJS.Timeout> = {};
   const _sse: Record<string, { stream: Writable; id?: string }> = {};
@@ -403,7 +403,7 @@ export const state = singleton(function state(): State {
       clearTimeout(timer);
       delete _timers[id];
     });
-    await operationsLoop.stop();
+    await operationsLoop.dispose();
   });
 
   return {

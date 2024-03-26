@@ -1,7 +1,6 @@
-import {
-  CommittedEvent,
-  Disposable,
-  Payload
+import { 
+  CommittedEvent, 
+  Disposable 
 } from "@andela-technology/eventually";
 import {
   PullOptions,
@@ -45,7 +44,12 @@ export interface ChannelResolvers {
   pull: Record<string, (url: URL, id: string) => PullChannel>;
   push: Record<
     string,
-    (url: URL, id: string, source: string, headers?: Payload) => PushChannel
+    (
+      url: URL,
+      id: string,
+      source: string,
+      headers?: Record<string, unknown>
+    ) => PushChannel
   >;
 }
 
