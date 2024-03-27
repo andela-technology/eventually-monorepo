@@ -35,7 +35,7 @@ export interface PullChannel extends Disposable {
 export interface PushChannel {
   label: string;
   init: () => Promise<void>;
-  push: (events: PushEvent[]) => Promise<number>;
+  push: (events: PushEvent[], state: SubscriptionState) => Promise<number>;
 }
 
 /**

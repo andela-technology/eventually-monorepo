@@ -64,7 +64,8 @@ export const work = async (options: AppOptions): Promise<void> => {
     position,
     batch_size,
     retries,
-    retry_timeout_secs
+    retry_timeout_secs,
+    timeout_sec
   }: Subscription): Promise<SubscriptionState> => {
     const pushUrl = new URL(endpoint);
     const pushFactory =
@@ -92,6 +93,7 @@ export const work = async (options: AppOptions): Promise<void> => {
       batchSize: batch_size,
       retries,
       retryTimeoutSecs: retry_timeout_secs,
+      timeoutSecs: timeout_sec || 10,
       endpointStatus: {
         name: "",
         code: 200,
@@ -165,7 +167,7 @@ export const work = async (options: AppOptions): Promise<void> => {
         });
 
         // push events
-        batch.length && (await state.pushChannel.push(batch));
+        batch.length && (await state.pushChannel.push(batch, sub.state));
 
         let lastResponse: PushEvent | undefined,
           lastCommittable: PushEvent | undefined;

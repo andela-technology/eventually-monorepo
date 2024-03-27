@@ -31,6 +31,7 @@ alter table public.subscriptions add column if not exists updated timestamptz no
 alter table public.subscriptions add column if not exists batch_size int not null default 100;
 alter table public.subscriptions add column if not exists retries int not null default 3;
 alter table public.subscriptions add column if not exists retry_timeout_secs int not null default 10;
+alter table public.subscriptions add column if not exists timeout_secs int not null default 10;
 alter table public.subscriptions alter column names type varchar(500);
 alter table public.subscriptions alter column names type varchar(750);
 alter table public.subscriptions alter column position type bigint;
