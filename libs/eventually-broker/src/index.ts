@@ -1,7 +1,7 @@
 import { singleton } from "@andela-technology/eventually";
 import { VoidPullChannel } from "./channels";
 import { PullChannel, SubscriptionStore } from "./interfaces";
-import { InMemorySubscriptionStore } from "./__dev__";
+import { InMemorySubscriptionStore } from "./adapters";
 
 export * from "./broker";
 export * from "./interfaces";

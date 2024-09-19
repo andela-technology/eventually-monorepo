@@ -3,7 +3,6 @@ import {
   AllQuery,
   CommittedEvent,
   log,
-  Payload
 } from "@andela-technology/eventually";
 import { Request, Router } from "express";
 import { Service, subscriptions } from "..";
@@ -35,7 +34,10 @@ const toService = (body: Service): Pick<Service, "id" | "channel" | "url"> => ({
 
 router.get(
   "/",
-  (req: Request<never, Payload, never, { add?: boolean }>, res) => {
+  (
+    req: Request<never, Record<string, unknown>, never, { add?: boolean }>,
+    res
+  ) => {
     req.query.add
       ? res.render(
           "add-service",

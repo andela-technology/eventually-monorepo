@@ -1,4 +1,3 @@
-import { Payload } from "@andela-technology/eventually";
 import { AxiosRequestHeaders } from "axios";
 
 const usnf = new Intl.NumberFormat("en-US");
@@ -50,22 +49,23 @@ export const ensureArray = (anyOrArray: any | any[]): any[] =>
 /**
  * Builds query string from payload
  */
-const toQS = (key: string, val: any): string => `&${key}=${val.toString()}`;
-export const toQueryString = (payload: Payload): string =>
+const toQS = (key: string, val: any): string => `${key}=${val.toString()}`;
+export const toQueryString = (payload: Record<string, unknown>): string =>
   Object.entries(payload)
     .filter(([, val]) => val)
-    .reduce(
-      (q, [key, val]) =>
+    .map(([key, val]) =>
         Array.isArray(val)
-          ? val.map((v) => q.concat(toQS(key, v))).join("")
-          : q.concat(toQS(key, val)),
-      ""
-    );
+        ? val.map((v) => toQS(key, v)).join("&")
+        : toQS(key, val)
+    )
+    .join("&");
 
 /**
  * Builds headers from payload
  */
-export const toAxiosRequestHeaders = (payload: Payload): AxiosRequestHeaders =>
+export const toAxiosRequestHeaders = (
+  payload: Record<string, unknown>
+): AxiosRequestHeaders =>
   Object.entries(payload).reduce((h, [key, val]) => {
     h[key] =
       typeof val === "boolean" || typeof val === "number"

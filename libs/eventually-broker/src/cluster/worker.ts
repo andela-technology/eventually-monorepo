@@ -1,4 +1,5 @@
 import { CommittedEvent, dispose, ExitCodes, log } from "@andela-technology/eventually";
+import {scheduler, Schedule} from './scheduler'
 import {
   AppOptions,
   Operation,
@@ -10,7 +11,6 @@ import {
   TriggerPayload
 } from "..";
 import { formatDate } from "../utils";
-import { loop, Loop } from "./loop";
 import {
   WorkerConfig,
   CommittableHttpStatus,
@@ -31,24 +31,27 @@ const triggerLog = (
 
 const sendState = (state: SubscriptionState, logit = true): void => {
   logit &&
-    log().info(
-      "blue",
-      `[${process.pid}] 📊${state.id} at=${state.position} total=${state.stats.total} batches=${state.stats.batches}`,
-      JSON.stringify(state.stats.events),
-      JSON.stringify(state.endpointStatus)
-    );
+    log()
+      .info(
+        'bgBlue',
+        `[${process.pid}] 📊${state.id} at=${state.position} total=${state.stats.total} batches=${state.stats.batches}`,
+        JSON.stringify(state.stats.events),
+        JSON.stringify(state.endpointStatus)
+      );
   process.send && process.send({ state });
 };
 
 type Sub = {
   state: SubscriptionState;
-  loop: Loop;
+  loop: Schedule;
   retry_count: number;
 };
 
-export const work = async (options: AppOptions): Promise<void> => {
+export const work = async (
+  options: AppOptions
+): Promise<() => Promise<void>> => {
   const config = JSON.parse(process.env.WORKER_ENV || "") as WorkerConfig;
-  const masterLoop = loop(config.id);
+  const masterLoop = scheduler(config.id);
   const subs: Record<string, Sub> = {};
   let refreshTimer: NodeJS.Timeout;
 
@@ -108,8 +111,8 @@ export const work = async (options: AppOptions): Promise<void> => {
     event: CommittedEvent
   ): boolean =>
     !(
-      subState.streamsRegExp.test(event.stream) &&
-      subState.namesRegExp.test(event.name)
+      subState.streamsRegExp.test(event.stream ) &&
+      subState.namesRegExp.test(event.name )
     );
 
   // returns true to retry
@@ -124,11 +127,11 @@ export const work = async (options: AppOptions): Promise<void> => {
     const { state, loop } = sub;
     log().info(
       "blue",
-      `[${process.pid}] ⚡ pull ${state.id} ${JSON.stringify({
-        ...trigger,
-        retry: sub.retry_count
-      })}`
-    );
+        `[${process.pid}] ⚡ pull ${state.id} ${JSON.stringify({
+          ...trigger,
+          retry: sub.retry_count
+        })}`
+      );
     try {
       channel_position = Math.max(channel_position, state.position);
       const trigger_position = trigger.position || -1;
@@ -141,7 +144,7 @@ export const work = async (options: AppOptions): Promise<void> => {
       }
 
       let count = state.batchSize;
-      while (count === state.batchSize && !loop.stopped()) {
+      while (count === state.batchSize && loop.status() === "running") {
         // pull events
         state.stats.batches++;
         state.endpointStatus.name = undefined;
@@ -153,8 +156,8 @@ export const work = async (options: AppOptions): Promise<void> => {
         count = events.length;
         log().trace(
           "magenta",
-          `[${process.pid}] pulled ${state.id} ${count} events @ ${state.position} [${state.batchSize}]`
-        );
+            `[${process.pid}] pulled ${state.id} ${count} events @ ${state.position} [${state.batchSize}]`
+          );
         if (!count) break;
 
         // filter ignored
@@ -316,7 +319,7 @@ export const work = async (options: AppOptions): Promise<void> => {
       current && Object.assign(state.stats, current.state.stats);
       const refresh = (subs[sub.id] = subs[sub.id] || {
         state,
-        loop: loop(sub.id),
+        loop: scheduler(sub.id),
         retry_count: 0
       });
       refresh.state = state;
@@ -328,14 +331,27 @@ export const work = async (options: AppOptions): Promise<void> => {
   };
 
   const exit = async (): Promise<void> => {
-    await dispose()(ExitCodes.ERROR);
+    await dispose()(
+      process.env.NODE_ENV === "test" ? ExitCodes.UNIT_TEST : ExitCodes.ERROR
+    );
   };
 
-  dispose(async () => {
+  const drain = async (): Promise<void> => {
     clearInterval(refreshTimer);
-    await Promise.all(Object.values(subs).map((sub) => sub.loop.stop()));
-    await masterLoop.stop();
-  });
+    const keys =
+      (Object.keys(subs).length &&
+        (await Promise.all(
+          Object.entries(subs).map(async ([key, sub]) => {
+            await sub.loop.dispose();
+            return key;
+          })
+        ))) ||
+      [];
+    keys.forEach((key) => delete subs[key]);
+    await masterLoop.dispose();
+  };
+
+  dispose(drain);
 
   process.on("message", (msg: MasterMessage) => {
     if (msg.operation === "REFRESH") {
@@ -355,7 +371,7 @@ export const work = async (options: AppOptions): Promise<void> => {
       Object.values(config.subscriptions).map(async (sub) => {
         const s = (subs[sub.id] = {
           state: await toState(sub),
-          loop: loop(sub.id),
+          loop: scheduler(sub.id),
           retry_count: 0
         });
         sendState(s.state, false);
@@ -372,4 +388,6 @@ export const work = async (options: AppOptions): Promise<void> => {
     process.send && process.send({ error: { message: error.message } });
     process.exit(0);
   }
+
+  return drain;
 };
