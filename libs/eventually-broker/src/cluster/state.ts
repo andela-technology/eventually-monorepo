@@ -286,7 +286,7 @@ export const state = singleton(function state(): State {
     const message = `Worker ${workerId} exited with ${
       signal ? signal : `code ${code}`
     }`;
-    log().info("bgRed", `[${process.pid}]`, message);
+    log().info("bgRed", `[${process?.pid || ''}]`, message);
 
     const producer = Object.values(_services).find(
       (service) => service && service.config?.workerId === workerId
